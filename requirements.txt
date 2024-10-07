@@ -1,0 +1,12 @@
+moviepy
+pydub
+pandas
+openai-whisper
+pyannote.audio
+deep-translator
+langdetect
+torch
+torchaudio
+ffmpeg-python
+yt-dlp
+pytube

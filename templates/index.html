@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Audio Transcription</title>
+</head>
+<body>
+    <h1>YouTube Audio Transcription</h1>
+    <form method="POST">
+        <label for="youtube_url">YouTube URL:</label>
+        <input type="text" id="youtube_url" name="youtube_url"><br><br>
+
+        <label for="translate">Translate Dialog?</label>
+        <select id="translate" name="translate">
+            <option value="no">No</option>
+            <option value="yes">Yes</option>
+        </select><br><br>
+
+        <label for="target_language">Target Language (if translation is selected):</label>
+        <input type="text" id="target_language" name="target_language" placeholder="e.g., 'en' for English"><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if transcript %}
+        <h2>Transcript:</h2>
+        <p>{{ transcript | safe }}</p>
+    {% endif %}
+
+    {% if error %}
+        <h2>Error:</h2>
+        <p>{{ error }}</p>
+    {% endif %}
+</body>
+</html>
